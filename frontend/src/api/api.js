@@ -1,7 +1,8 @@
 import axios from 'axios';
 
+// Use environment variable OR fallback to deployed backend
 const api = axios.create({
-  baseURL: 'http://localhost:4000',
+  baseURL: import.meta.env.VITE_API_URL || 'https://trello-clone-2-uag4.onrender.com',
 });
 
 export const getBoard = async () => {
